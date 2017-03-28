@@ -36,6 +36,7 @@ default_crow_resonator_layout = default_crow_ring_resonator.Layout(num_rings=5)
 print default_crow_resonator_layout.ports
 print "Ports look good"
 
+default_crow_resonator_layout.visualize()
 default_crow_resonator_layout.write_gdsii("crow_default_testing.gds")
 
 # and do a 1D Crow with a custom gap list, need to add exception but seems to work fine for now
@@ -43,6 +44,7 @@ the_list = [1.5, 2.5, 1.0, 1.5]
 gapped_crow_ring_resonator = CROW_1D(name="gapped")
 gapped_crow_resonator_layout = gapped_crow_ring_resonator.Layout(num_rings=5, use_gap_list=True, ring_gap_list=the_list)
 
+gapped_crow_resonator_layout.visualize()
 gapped_crow_resonator_layout.write_gdsii("crow_gapped_testing.gds")
 
 print "fin"
